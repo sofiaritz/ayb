@@ -75,7 +75,6 @@ async fn confirm(
 #[cfg(test)]
 mod tests {
     use actix_web::{App, test};
-    use actix_web::http::StatusCode;
     use crate::http::tokens::encrypt_auth_token;
     use crate::ayb_db::{db_interfaces::connect_to_ayb_db, models::EntityType};
     use crate::http::structs::{AybConfig, AybConfigEmail, AybConfigAuthentication, AuthenticationDetails};
