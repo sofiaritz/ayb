@@ -118,7 +118,10 @@ pub async fn run_in_sandbox(
         .arg("--")
         .arg("/tmp/ayb_isolated_runner")
         .arg(tmp_db_path)
-        .arg(query)
+        .arg(query);
+    println!("{:?}", &child);
+
+  let mut child = child
         .stdout(Stdio::piped())
         .stderr(Stdio::piped());
 
