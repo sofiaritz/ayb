@@ -120,9 +120,11 @@ pub async fn run_in_sandbox(
         .arg(tmp_db_path)
         .arg(query)
         .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
+        .stderr(Stdio::piped());
+
+  println!("{:?}", &child);
+  let mut child = child
         .spawn()?;
-    println!("{:?}", &child);
 
     let mut stdout_reader = BufReader::new(child.stdout.take().unwrap());
     let mut stderr_reader = BufReader::new(child.stderr.take().unwrap());
