@@ -122,6 +122,7 @@ pub async fn run_in_sandbox(
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())
         .spawn()?;
+    println!("{:?}", &child);
 
     let mut stdout_reader = BufReader::new(child.stdout.take().unwrap());
     let mut stderr_reader = BufReader::new(child.stderr.take().unwrap());
