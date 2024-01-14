@@ -121,7 +121,7 @@ pub async fn run_in_sandbox(
         .arg(query);
     println!("{:?}", &child);
 
-  let mut child = child
+  let child = child
         .stdout(Stdio::piped())
         .stderr(Stdio::piped());
 
